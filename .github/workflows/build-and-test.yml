@@ -1,0 +1,22 @@
+# fpemu (https://github.com/mjcraighead/fpemu)
+# Copyright (c) 2025-2026 Matt Craighead
+# SPDX-License-Identifier: MIT
+
+name: Build and Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Build and test
+        run: ./make.py :test
