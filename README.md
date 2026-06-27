@@ -34,9 +34,10 @@ Masked exception behavior is in scope. Trapping behavior is not modeled.
 
 `RCPSS` and `RSQRTSS` are excluded from the first release. These instructions are
 architecturally approximate and have been observed to produce different result bits on
-Intel and AMD CPUs, so there is no single cross-vendor bit-exact result for this
-reference model to target. They can be revisited later as CPU-profile-specific models
-if that becomes useful.
+Intel and AMD CPUs (evidence:
+https://robert.ocallahan.org/2021/09/rr-trace-portability-diverging-behavior.html),
+so there is no single cross-vendor bit-exact result for this reference model to target.
+They can be revisited later as CPU-profile-specific models if that becomes useful.
 
 Packed/vector instruction modeling is intentionally out of scope. Different downstream
 users may want different register layouts, lane containers, memory forms, merge/zeroing
